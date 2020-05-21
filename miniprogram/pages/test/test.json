@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "evaluate":"/componts/evaluate/evaluate"
+  }
+}

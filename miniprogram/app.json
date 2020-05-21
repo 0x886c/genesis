@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/category/category",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/login/login",
+    "pages/upload/upload",
+    "componts/evaluate/evaluate"
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8A2BE2",
+    "navigationBarTitleText": "创e行",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icons/index.png",
+        "selectedIconPath": "/icons/index-s.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "/icons/category.png",
+        "selectedIconPath": "/icons/category-s.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/icons/user.png",
+        "selectedIconPath": "/icons/user-s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

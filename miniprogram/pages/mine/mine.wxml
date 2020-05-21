@@ -1,0 +1,23 @@
+<!-- 展示用户名，用户头像，用户性别 -->
+<view class="userinfo">
+	<view class="userinfo-avatar">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<view class="userinfo-nickname">
+		<open-data type="userNickName"></open-data>
+	</view>
+</view>
+<!-- 进入上传文案页面 -->
+<button bind:tap="navtoupload">点击跳转至上传文案页面</button>
+<!-- 展示文案 -->
+<view wx:for="{{mydoc}}">
+	<view bind:tap="preview" data-fileid="{{item.fileid}}">{{item.filename}}</view>
+	<button
+	 bind:tap="deletdoc"
+	 data-id="{{item._id}}"
+	 data-fileid="{{item.fileid}}"
+	>
+		删除上面那个文案
+	</button>
+</view>
+

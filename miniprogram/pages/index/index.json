@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search":"/componts/search/search",
+    "evaluate":"/componts/evaluate/evaluate"
+
+  }
+}

@@ -1,0 +1,13 @@
+<!-- 分类标签选择 -->
+<view>请选择类别，否则将无法再分类中找到你所上传的文案</view>
+<view>
+	<radio-group bindchange="bindChange">
+		<radio value="分类1">分类1</radio>
+		<radio value="分类2">分类2</radio>
+		<radio value="分类3">分类3</radio>
+		<radio value="分类4">分类4</radio>
+	</radio-group>
+</view>
+<!-- 上传文件至云存储，并新增数据库 -->
+<button bindtap="uploadfile">点击上传文案文档</button>
+
