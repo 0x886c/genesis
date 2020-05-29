@@ -1,7 +1,8 @@
 Page({
 
   data: {
-    list: ['分类1', '分类2', '分类3', '分类4'],
+    list: ['网络', '食品', '科技', '艺术'],
+    selectedlist:'',
     catedoc: [],
     num: 0,
     sum: 0,
@@ -22,6 +23,20 @@ Page({
   _success() {
     console.log('你点击了确认')
   },
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: '创e行小程序',
+      path: 'pages/index/index',
+      success: function (res) {
+        console.log("转发成功:" + JSON.stringify(res));
+        that.shareClick();
+      },
+      fail: function (res) {
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+  },
   /* 点击后获取分类数据 */
   clickTab: function (e) {
     var that = this
@@ -32,7 +47,8 @@ Page({
     }).get({
       success: res => {
         that.setData({
-          catedoc: res.data
+          catedoc: res.data,
+          selectedlist:select
         })
       }
     })

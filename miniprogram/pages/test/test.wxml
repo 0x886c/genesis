@@ -1,8 +1,17 @@
-<button bind:tap="showEva">点击弹出组件</button>
-<evaluate
- id='evaluate'
- bind:error="_error"
- bind:success="_success"
- paramtoev="6845298b5ec4a1620006c94a4fee9724"
-></evaluate>
-
+	<block class="newdoc" wx:for="{{newdoc}}">
+		<view class="show">
+			<view
+			 class="docname"
+			 bind:tap="preview"
+			 data-id="{{item.fileid}}"
+			>{{item.filename}}
+			</view>
+			<evaluate
+			 id='evaluate'
+			 bind:error="_error"
+			 bind:success="_success"
+			 paramtoev="{{item._id}}"
+			></evaluate>
+			<view class="evaluete">此文案得分:"{{filters.toFix(item.count)}}"</view>
+		</view>
+	</block>

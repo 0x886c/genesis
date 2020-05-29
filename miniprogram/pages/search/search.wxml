@@ -1,19 +1,24 @@
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
 <!-- 搜索框 -->
-<view class="search">
-	<input
-	 type="text"
-	 bindinput="input"
-	 placeholder="请输入搜索内容"
-	/>
-	<view wx:for="{{getlist}}">
-		<view bind:tap="preview" data-id="{{item.fileid}}">{{item.filename}}</view>
-		<evaluate
-		 id='evaluate'
-		 bind:error="_error"
-		 bind:success="_success"
-		 paramtoev="{{item._id}}"
-		></evaluate>
-		<view>此文案得分:"{{item.count}}"</view>
+<view class="search_index">
+	<view class="search">
+		<input
+		 type="text"
+		 bindinput="input"
+		 placeholder="请输入搜索内容"
+		/>
+		<view wx:for="{{getlist}}">
+			<view class="show">
+				<view bind:tap="preview" data-id="{{item.fileid}}">{{item.filename}}</view>
+				<evaluate
+				 id='evaluate'
+				 bind:error="_error"
+				 bind:success="_success"
+				 paramtoev="{{item._id}}"
+				></evaluate>
+				<view class="point">此文案得分:"{{filters.toFix(item.count)}}"</view>
+			</view>
+		</view>
 	</view>
 </view>
 

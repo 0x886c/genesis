@@ -1,3 +1,14 @@
 <!-- 授权用户信息界面 -->
-<button open-type="getUserInfo" bindgetuserinfo="Bindgetuserinfo">点击授权</button>
+<view class="index">
+	<view class="userinfo">
+		<view class="userinfo-avatar">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<view class="userinfo-nickname">
+			<open-data type="userNickName"></open-data>
+		</view>
+	</view>
+<button class="button" open-type="getUserInfo" bindgetuserinfo="Bindgetuserinfo">点击登录</button>
+</view>
+
 

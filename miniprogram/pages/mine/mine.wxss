@@ -1,0 +1,34 @@
+.show{
+    height: 150rpx;
+    padding: 15rpx;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25rpx;
+    margin: 20rpx;
+    border: 2rpx solid grey;
+    display: flex;
+    flex:2 1 auto;
+}
+.showdoc{
+    display: block;
+}
+.show :first-child{
+    width: 400rpx;
+}
+.delete {
+    width: 200rpx;
+    height: 80rpx;
+    background-color: red;
+    border-radius: 25rpx;
+}
+.footer {
+    display: flex;
+}
+.upload{ 
+    background-color: greenyellow;
+    border-radius: 75rpx;
+}
+.contact{
+    background-color: #ccffff;
+    border-radius: 75rpx;
+}

@@ -1,5 +1,5 @@
 .search {
-  background-color: red;
+  background-color:	#33cccc;
   padding: 10rpx;
   height: 90rpx;
 }
@@ -10,5 +10,6 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-radius: 15rpx;
+  border-radius: 75rpx;
+  color: grey;
 }

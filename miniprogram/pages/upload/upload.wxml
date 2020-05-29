@@ -1,13 +1,15 @@
-<!-- 分类标签选择 -->
-<view>请选择类别，否则将无法再分类中找到你所上传的文案</view>
-<view>
-	<radio-group bindchange="bindChange">
-		<radio value="分类1">分类1</radio>
-		<radio value="分类2">分类2</radio>
-		<radio value="分类3">分类3</radio>
-		<radio value="分类4">分类4</radio>
-	</radio-group>
+<view class="index">
+	<!-- 分类标签选择 -->
+	<view class="title">请在上传文件前选择类别，否则将无法在分类中找到你所上传的文案</view>
+	<view class="list">
+		<radio-group class="radiogroup" bindchange="bindChange">
+			<radio value="网络">网络</radio>
+			<radio value="食品">食品</radio>
+			<radio value="科技">科技</radio>
+			<radio value="艺术">艺术</radio>
+		</radio-group>
+	</view>
+	<!-- 上传文件至云存储，并新增数据库 -->
+	<button class="button" bindtap="uploadfile">点击上传文案文档</button>
 </view>
-<!-- 上传文件至云存储，并新增数据库 -->
-<button bindtap="uploadfile">点击上传文案文档</button>
 

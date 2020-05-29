@@ -1,1 +1,23 @@
-/* pages/login/login.wxss */
+.userinfo-avatar {
+  margin-right: 150rpx;
+  height: 100rpx;
+  width: 100rpx;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.index {
+  height: 750rpx;
+}
+.userinfo {
+  margin-top: 350rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  margin-top: 150rpx;
+  background-color: greenyellow;
+  border-radius: 75rpx;
+}

@@ -1,9 +1,9 @@
-<button bind:tap="showEva">显示评分组件</button>
-<view hidden="{{flag}}">
-	<view>
-		<view>{{title}}</view>
+<view class='container'>
+	<button class="button" bind:tap="showEva">评分</button>
+	<view class="evaluate_box" hidden="{{flag|evaacess}}">
 		<view wx:for="{{stars}}">
 			<image
+			 class="star-image"
 			 data-score="{{item+1}}"
 			 bind:tap="select"
 			 style="left:{{item*80}}rpx"
@@ -11,10 +11,13 @@
 			>
 			</image>
 		</view>
-		<text bind:tap="_error">{{canceltext}}</text>
-		<text bind:tap="submitstar"
+		<view class="footer">
+			<text class="_error" bind:tap="_error">{{canceltext}}</text>
+			<text class="submitstar" bind:tap="submitstar"
 		 data-id="{{paramtoev}}"
 		 type="primary">{{choosetext}}</text>
+		</view>
+
 	</view>
 </view>
 

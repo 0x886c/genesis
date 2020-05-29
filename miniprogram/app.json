@@ -1,19 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test",
     "pages/category/category",
     "pages/mine/mine",
     "pages/search/search",
-    "pages/login/login",
     "pages/upload/upload",
     "componts/evaluate/evaluate"
   ],
   "window": {
-    "enablePullDownRefresh": true,
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#ccffff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#8A2BE2",
+    "navigationBarBackgroundColor": "#33cccc",
     "navigationBarTitleText": "创e行",
     "navigationBarTextStyle": "black"
   },

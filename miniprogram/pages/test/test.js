@@ -1,7 +1,16 @@
 // pages/test/test.js
 Page({
   data:{
-    circle:[1,2,3,4,5,6,7,8,9]
+    list: [],
+    getlist: [],
+    num: 0,
+    sum: 0,
+    count: 0,
+    stars: [0, 1, 2, 3, 4],
+    selectedSrc: '../../icons/star-s.png',
+    normalSrc: '../../icons/star.png',
+    score: 0,
+    scores:[]
   },
 
   onReady:function(){

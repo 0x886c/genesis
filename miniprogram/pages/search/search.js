@@ -27,6 +27,20 @@ Page({
   input: function (e) {
     this.search(e.detail.value)
   },
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: '创e行小程序',
+      path: 'pages/search/search',
+      success: function (res) {
+        console.log("转发成功:" + JSON.stringify(res));
+        that.shareClick();
+      },
+      fail: function (res) {
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+  },
   /* 获取数据库信息 */
   getList: function () {
     var that = this

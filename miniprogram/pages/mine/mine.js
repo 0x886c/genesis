@@ -7,6 +7,20 @@ Page({
   onShow:function(){
     this.getdocfromopenid()
   },
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: '创e行小程序',
+      path: 'pages/mine/mine',
+      success: function (res) {
+        console.log("转发成功:" + JSON.stringify(res));
+        that.shareClick();
+      },
+      fail: function (res) {
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+  },
   /* 删除自己上传的文档 */
   deletdoc:function(e){
     var that =this
@@ -14,29 +28,39 @@ Page({
     let id=e.currentTarget.dataset.id
     let fileid=e.currentTarget.dataset.fileid
     console.log(fileid)
-    wx.showLoading({
-      title:'正在删除',
-    })
-    wx.cloud.database().collection('documents').doc(id).remove({
+    wx.showModal({
+
+      title:'确认要删除吗？',
+      confirmColor:'#576B95',
       success:res=>{
-        console.log(res)
-        wx.cloud.deleteFile({
-          fileList:[fileid],
-          success:res=>{
-            wx.showToast({
-              title:'删除成功',
-              icon:'success',
-              duration:1500,
-              mask:false
-            })
-          },
-          fail:console.error
-        })
-      },
-      complete:()=>{
-        that.onShow()
+        if (res.confirm) {
+          wx.showLoading({
+            title:'正在删除',
+          })
+          wx.cloud.database().collection('documents').doc(id).remove({
+            success:res=>{
+              console.log(res)
+              wx.cloud.deleteFile({
+                fileList:[fileid],
+                success:res=>{
+                  wx.showToast({
+                    title:'删除成功',
+                    icon:'success',
+                    duration:1500,
+                    mask:false
+                  })
+                },
+                fail:console.error
+              })
+            },
+            complete:()=>{
+              that.onShow()
+            }
+          })
+        }
       }
     })
+    
   },
   /* 云存储下载保存至本地临时路径，预览文档 */
   preview:function(e){

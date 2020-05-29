@@ -1,1 +1,51 @@
-/* pages/category/category.wxss */
+.flexlist .leftlist {
+    width: 750rpx;
+    height: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftlistitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    background-color: #ccffff;
+    overflow-y: hidden;
+    width: 150rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+}
+.leftlistitemactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    background-color: #18f5f5;
+    overflow-y: hidden;
+    width: 150rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+}
+.show {
+    padding: 15rpx;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25rpx;
+    margin: 20rpx;
+    border: 2rpx solid grey;
+    overflow: hidden;
+}
+.point{
+    margin-top: -160rpx;
+    margin-bottom: 75rpx;
+    justify-content: center;
+}
+.title {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15rpx;
+}

@@ -11,11 +11,13 @@ exports.main = async (event, context) => {
   var sum=event.sum
   var num=event.num
   var count=event.count
+  var evalist=event.evalist
   return cloud.database().collection('documents').doc(id).update({
     data:{
       sum:sum,
       num:num,
-      count:count
+      count:count,
+      evalist:evalist
     }
   })
 }

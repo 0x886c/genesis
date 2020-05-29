@@ -2,7 +2,20 @@
 Page({
 
   data: {
-    character:''
+    character:'',
+    openid:''
+  },
+  onLoad:function(){
+    var that =this
+    wx.cloud.callFunction({
+      name:"getOpenid",
+      success:res=>{
+        console.log(res)
+        that.setData({
+          openid:res.result.openid
+        })
+      },fail:console.error
+    })
   },
   bindChange:function(e){
     console.log(e.detail.value)
@@ -47,7 +60,8 @@ Page({
                 character:that.data.character,
                 sum:0,
                 num:0,
-                count:0
+                count:0,
+                evalist:[that.data.openid]
               }
             })
           },

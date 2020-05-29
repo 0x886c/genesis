@@ -12,83 +12,34 @@ Page({
     score: 0
   },
   onShow: function () {
-    this.getauthor()
     this.getnewdoc()
     console.log(this)
   },
-  onLoad:function(){
-    this.evaluate=this.selectComponent("#evaluate")
+  onLoad: function () {
+    this.evaluate = this.selectComponent("#evaluate")
     console.log(this)
   },
-  _error(){
+  _error() {
     console.log('你点击了取消')
   },
-  _success(){
+  _success() {
     console.log('你点击了确认')
     this.getnewdoc()
   },
-  /* 提交文案分数 */
-/*   submitstar: function (e) {
-    var that = this
-    console.log(e)
-    let id = e.currentTarget.dataset.id
-    console.log('评价得分' + this.data.score)
-    wx.cloud.database().collection('documents').doc(id).get({
-      success: res => {
-        that.setData({
-          sum: res.data.sum + this.data.score,
-          num: res.data.num + 1,
-          count: (res.data.sum + this.data.score) / (res.data.num + 1)
-        })
-        
-        wx.cloud.callFunction({
-          name: 'changecount',
-          data: {
-            id: id,
-            sum: that.data.sum,
-            num: that.data.num,
-            count: that.data.count
-          },
-          success: res => {
-            wx.showToast({
-              title: '评价成功',
-              icon: 'success',
-              duration: 1500,
-              mask: false,
-            });
-            that.onShow()
-            console.log(res)
-          },
-          fail: res => {
-            console.log(res)
-          }
-        })
-        console.log(that.data.count)
-      }, fail: console.error
-    })
-  }, */
-  /* 数星星 */
-  select: function (e) {
-    var score = e.currentTarget.dataset.score
-    this.setData({
-      score: score
-    })
-    console.log(score)
-  },
-  /* 获得授权 */
-  getauthor: function () {
-    wx.getSetting({
-      success(res) {
-        console.log(res.authSetting['scope.userInfo'])
-        /* 不授权就跳转至登陆页面 */
-        if (res.authSetting['scope.userInfo'] === undefined || res.authSetting['scope.userInfo'] === false) {
-          console.log('未授权')
-          wx.navigateTo({
-            url: '../login/login',
-          });
-        }
+  /* 转发分享 */
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: '创e行小程序',
+      path: 'pages/index/index',
+      success: function (res) {
+        console.log("转发成功:" + JSON.stringify(res));
+        that.shareClick();
+      },
+      fail: function (res) {
+        console.log("转发失败:" + JSON.stringify(res));
       }
-    })
+    }
   },
   /* 获取最新文案 */
   getnewdoc: function () {
@@ -103,6 +54,9 @@ Page({
         that.setData({
           newdoc: arr
         })
+        that.setData({
+          count: count.toFixed(2)
+        })
       },
       fail: console.error
     })
@@ -116,13 +70,16 @@ Page({
     });
     wx.cloud.downloadFile({
       fileID: fileid,
+      //成功回调函数
       success: (result) => {
         console.log(result)
         wx.openDocument({
           filePath: result.tempFilePath,
         });
       },
+      //失败回调函数
       fail: () => { console.error },
+      //结束回调函数
       complete: () => { wx.hideLoading(); }
     });
   },

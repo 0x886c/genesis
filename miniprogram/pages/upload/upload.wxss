@@ -1,1 +1,17 @@
-/* pages/upload/upload.wxss */
+.button{
+    margin-top: 125rpx;
+    background-color: greenyellow;
+    border-radius: 75rpx;
+}
+.radiogroup{
+    margin: auto;
+    margin-top: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    margin: auto;
+    margin-top: 100rpx;
+    text-align: center;
+}
